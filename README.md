@@ -92,8 +92,9 @@
 
 >**Trocar para terminal ou voltar para ambiente gráfico**
 >>dessa forma é possível consertar alguns erros como alterar arquivos de config que deixam em loop de login e coisas assim.
+>```
 >control + alt + f2-f6(termianl) | f7(ambiente gráfico no meu caso i3wm)
-
+>```
 
 >**Executar o dmenu se tiver e for o atalho padrão**
 >mod + d
@@ -113,12 +114,15 @@
 >''' 
 
 >2 - Particionamento
+
 >>2.1 - Checar partições reconhecidas do sistema
+
 >>```
 >>lsblk 
 >>```
->><br>
+
 >>2.2 - Utilizar cfdisk para particionar
+
 >>```
 >>cfdisk <partition>
 >>```
@@ -126,7 +130,9 @@
 >>>4GB-8GB swap partition
 >>>(se o modo de boot for EFI o mais comum hoje em dia) 1GB  EFI partition
 >>>main partition Linux filesystem (todo o resto da memória)
+
 >>2.3 - Formatar e montar as partições no sistema
+
 >>```
 >>mkfs.fat -F32 /dev/nomedapartiçãoEFI
 >>```
@@ -145,8 +151,9 @@
 >>```
 >>mkswap /dev/nomepartiçãoSWAP
 >>```
+
 >>Você então pode utilizar lsblk para checar se as partições foram devidamente montadas em seus diretórios.
->><br>
+
 >>2.3 Mirrors para o pacman
 
 ***
