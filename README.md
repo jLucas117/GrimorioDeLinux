@@ -31,14 +31,14 @@
 >rm <arquivo>
 >``` 
 >>remover diretório
->```
->rmdir <arquivo>
->```
+>>>```
+>>>rmdir <diretório>
+>>>```
 >>remover diretório com arquivos dentro 
->```
->rm -r <arquivo>
->``` 
->>-r = recursivo
+>>>```
+>>>rm -r <diretório>
+>>>``` 
+>>>o -r significa recursivo
 
 >**Copiar arquivo**
 >```
@@ -108,7 +108,6 @@
 >!Antes de instalar checar modo da BIOS e desabilitar secure boot
 
 >1 - Setar o layout do do teclado
-
 >'''
 >localectl set-keymap br-abnt2
 >''' 
@@ -118,6 +117,7 @@
 >>```
 >>lsblk 
 >>```
+>><br>
 >>2.2 - Utilizar cfdisk para particionar
 >>```
 >>cfdisk <partition>
@@ -146,6 +146,7 @@
 >>mkswap /dev/nomepartiçãoSWAP
 >>```
 >>Você então pode utilizar lsblk para checar se as partições foram devidamente montadas em seus diretórios.
+>><br>
 >>2.3 Mirrors para o pacman
 
 ***
