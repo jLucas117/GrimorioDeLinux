@@ -2,10 +2,16 @@
 >comandos que utilizo e howtos aleatorios
 
 ## Comandos Úteis
->desligar o sistema
-    >`sudo shutdown now`
->mostrar diretório atual
-`pwd` 
+
+>**Desligar o sistema**
+>```
+>sudo shutdown now
+>```
+
+>**Mostrar diretório atual**
+>```
+>pwd
+>``` 
 
 sudo systemctl suspend |hibernar
 ls -a |mostrar arquivos com -a para incluir arquivos ocultos com . início do nome
