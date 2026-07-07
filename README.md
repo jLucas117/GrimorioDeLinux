@@ -296,7 +296,7 @@
 >>reboot
 >>```
 
->>16 - Instalar i3wm um terminal e um greeter
+>16 - Instalar i3wm um terminal e um greeter
 
 >>```
 >>sudo pacman -S i3
@@ -313,7 +313,7 @@
 >>systemctl enable lightdm 
 >>```
 
->>17 para deixar o terminal kitty transparente
+>17 para deixar o terminal kitty transparente
 >>```
 >>sudo pacman -S picom
 >>```
@@ -333,7 +333,7 @@
 
 >>Então você precisara setar o picom na configuração do i3wm (arquivo no final)
 
->>18 - Notificações, papel de parede e tirar print 
+>18 - Notificações, papel de parede e tirar print 
 >>```
 >>sudo pacman -S dunst feh flameshot
 >>```
