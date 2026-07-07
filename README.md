@@ -109,6 +109,7 @@
 >!Antes de instalar checar modo da BIOS e desabilitar secure boot
 
 >1 - Setar o layout do do teclado
+
 >'''
 >localectl set-keymap br-abnt2
 >''' 
@@ -172,6 +173,7 @@
 >>(adicione intel-ucode se tiver intel)
 
 >5 - Salvar particionamento na memória
+
 >>```
 >>genfstab -U /mnt >> /mnt/etc/fstab
 >>```
@@ -212,12 +214,14 @@
 >>Escreva LANG= pt_BR.UTF-8
 
 >8 - Setar nome do sistema
+
 >>Crie o arquivo abaixo e escreva qualquer coisa dentro do mesmo que será o nome do sistema
 >>```
 >>vim /etc/hostname
 >>```
 
 >9 - Habilitar network manager ao inciar o sistema
+
 >>```
 >>systemctl enable NetworkManager
 >>```
@@ -231,7 +235,7 @@
 
 >>(!toda vez que utilizar o comando sudo é este password que devera digitar!)
 
->>11 - Adicionar um usuário 
+>11 - Adicionar um usuário 
 
 >>```
 >>useradd -m -G wheel, users <nome do usuário>
@@ -240,7 +244,7 @@
 >>passwd <nome do usuário>
 >>```
 
->>12 - Adicionar para o grupo de usuários wheel a opção de executar comandos como administrador (sudo)
+>12 - Adicionar para o grupo de usuários wheel a opção de executar comandos como administrador (sudo)
 
 >>```
 >>sudo visudo
@@ -249,6 +253,7 @@
 >>Você deve descomentar (tirar a cerquilha) onde tem Uncomment to allow members of group wheel to execute commands
 
 >13 - Instalar o BootLoader
+
 >>```
 >>pacman -S grub efibootmgr
 >>```
@@ -264,7 +269,7 @@
 
 >>Eu acho que para adicionar dual boot é necessário descomentar GrubPickableOsProber in /etc/default/grub
 
->>14 Sair do chroot e reboot no sistema
+>14 Sair do chroot e reboot no sistema
 
 >>```
 >>exit
@@ -277,6 +282,7 @@
 >>```
 
 >15 Instalar Drivers da nvidia caso seja sua placa de vídeo
+
 >>```
 >>sudo pacman -S linux-headers linux-lts-headers 
 >>```
