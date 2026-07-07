@@ -131,7 +131,7 @@
 >>>(se o modo de boot for EFI o mais comum hoje em dia) 1GB  EFI partition
 >>>main partition Linux filesystem (todo o resto da memória)
 
->>2.3 - Formatar e montar as partições no sistema
+>>2.2 - Formatar e montar as partições no sistema
 
 >>```
 >>mkfs.fat -F32 /dev/nomedapartiçãoEFI
@@ -154,7 +154,7 @@
 
 >>Você então pode utilizar lsblk para checar se as partições foram devidamente montadas em seus diretórios.
 
->>2.3 - Mirrors para o pacman
+>3 - Mirrors para o pacman
 
 >>o arquivo de configurações do mirror está em /etc/pacman.d/mirrolist
 >>(você pode abri-lo com -less <arquivo>)
@@ -164,25 +164,25 @@
 >>```
 >>(você pode mostrar o conteúdo deste arquivo com cat <arquivo>)
 
->>2.4 - Baixar arquivos iniciais
+>4 - Baixar arquivos iniciais
 
 >>```
 >>pacstrap -K /mnt base-linux linux-firmware networkmanager vim base-devel
 >>```
 >>(adicione intel-ucode se tiver intel)
 
->>2.5 - Salvar particionamento na memória
+>5 - Salvar particionamento na memória
 >>```
 >>genfstab -U /mnt >> /mnt/etc/fstab
 >>```
 
->>2.6 - Login no sistema
+>6 - Login no sistema
 
 >>```
 >>arch-chroot /mnt
 >>```
 
->>2.7 - Setar informação de localização
+>7 - Setar informação de localização
 
 >>Você pode digitar o comando abaixo e pressionar tecla tab ao invés de executar para ver diferentes opções
 >>```
@@ -211,18 +211,19 @@
 >>```
 >>Escreva LANG= pt_BR.UTF-8
 
->>2.8 - Setar nome do sistema
+>8 - Setar nome do sistema
 >>Crie o arquivo abaixo e escreva qualquer coisa dentro do mesmo que será o nome do sistema
 >>```
 >>vim /etc/hostname
 >>```
 
->>2.9 - Habilitar network manager ao inciar o sistema
+>9 - Habilitar network manager ao inciar o sistema
 >>```
 >>systemctl enable NetworkManager
 >>```
+>>(!É importante ter certeza que instalou o network manager principalmente se você utiliza thetering usb ou wifi!)
 
->>2.10 - Colocar senha no super usuário (que será utilizado para executar comandos que exigem este nível de credencial)
+>10 - Colocar senha no super usuário (que será utilizado para executar comandos que exigem este nível de credencial)
 
 >>```
 >>passwd
@@ -230,7 +231,7 @@
 
 >>(!toda vez que utilizar o comando sudo é este password que devera digitar!)
 
->>2.11 - Adicionar um usuário 
+>>11 - Adicionar um usuário 
 
 >>```
 >>useradd -m -G wheel, users <nome do usuário>
@@ -239,7 +240,7 @@
 >>passwd <nome do usuário>
 >>```
 
->>2.12 - Adicionar para o grupo de usuários wheel a opção de executar comandos como administrador (sudo)
+>>12 - Adicionar para o grupo de usuários wheel a opção de executar comandos como administrador (sudo)
 
 >>```
 >>sudo visudo
@@ -247,7 +248,7 @@
 
 >>Você deve descomentar (tirar a cerquilha) onde tem Uncomment to allow members of group wheel to execute commands
 
->>2.13 - Instalar o BootLoader
+>13 - Instalar o BootLoader
 >>```
 >>pacman -S grub efibootmgr
 >>```
@@ -263,7 +264,7 @@
 
 >>Eu acho que para adicionar dual boot é necessário descomentar GrubPickableOsProber in /etc/default/grub
 
->>2.14 Sair do chroot e reboot no sistema
+>>14 Sair do chroot e reboot no sistema
 
 >>```
 >>exit
@@ -275,7 +276,7 @@
 >>reboot
 >>```
 
->>3.1 Instalar Drivers da nvidia caso seja sua placa de vídeo
+>15 Instalar Drivers da nvidia caso seja sua placa de vídeo
 >>```
 >>sudo pacman -S linux-headers linux-lts-headers 
 >>```
@@ -289,7 +290,7 @@
 >>reboot
 >>```
 
->>3.2 - Instalar i3wm um terminal e um greeter
+>>16 - Instalar i3wm um terminal e um greeter
 
 >>```
 >>sudo pacman -S i3
@@ -306,7 +307,7 @@
 >>systemctl enable lightdm 
 >>```
 
->>3.3 para deixar o terminal kitty transparente
+>>17 para deixar o terminal kitty transparente
 >>```
 >>sudo pacman -S picom
 >>```
@@ -326,7 +327,7 @@
 
 >>Então você precisara setar o picom na configuração do i3wm (arquivo no final)
 
->>3.4 - Notificações, papel de parede e tirar print 
+>>18 - Notificações, papel de parede e tirar print 
 >>```
 >>sudo pacman -S dunst feh flameshot
 >>```
